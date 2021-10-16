@@ -1,2 +1,11 @@
-@str hello = "ratio"
-@strout hello 
+out! this is out!
+out this is out
+;;this is commenting
+@strout hello
+@intout 1
+@floatout 1.1
+@str varString = "ratio"
+@int varInteger = 1
+@float varFloat = 1.1
+@double varDouble = 1.1111
+@any = "101"
