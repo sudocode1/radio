@@ -67,9 +67,6 @@ int main() {
         else if (line.rfind("@double", 0) == 0) {
             writeFile << "double " << line.substr(8) << ";\n"; 
         } 
-        else if (line.rfind("@any", 0) == 0) {
-            writeFile << "type " << line.substr(5) << ";\n"; 
-        }
         else {
             std::cout << "ERR: Line " << i << "\n" << line;
             break;
