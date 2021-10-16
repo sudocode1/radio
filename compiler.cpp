@@ -62,7 +62,10 @@ int main() {
         } 
         else if (line.rfind("@float", 0) == 0) {
             writeFile << "float " << line.substr(7) << ";\n"; 
-        } 
+        }
+        // else if (line.rfind("@array", 0) == 0) {
+
+        // }
         else if (line.rfind("@double", 0) == 0) {
             writeFile << "double " << line.substr(8) << ";\n"; 
         }
@@ -86,6 +89,9 @@ int main() {
         }
         else if (line.rfind("for", 0) == 0) {
             writeFile << "for(" << line.substr(4) << "){\n";
+        }
+        else if (line.rfind("@nl", 0) == 0) {
+            writeFile << "printf(\"\\n\");\n";
         }
         else {
             std::cout << "ERR: Line " << i << "\n" << line << "\n";
