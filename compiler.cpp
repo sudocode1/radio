@@ -98,7 +98,4 @@ int main() {
     }
     writeFile << "return 0;\n}";
     writeFile.close();
-
-    
-
 }
