@@ -15,3 +15,25 @@ fullcompile: compiler.cpp output.c
 	gcc output.c -I.
 	### RUN COMPILED RADIO FILE ###
 	./a.out 
+
+push-base:
+	git add compiler.cpp 
+	git add Makefile 
+	git add README.md
+	git commit 
+	git push 
+
+push-compiler:
+	git add compiler.cpp 
+	git commit 
+	git push 
+
+push-all:
+	git add *
+	git commit 
+	git push
+
+push-all-force:
+	git add * -f 
+	git commit 
+	git push 
