@@ -28,6 +28,12 @@ push-compiler:
 	git commit 
 	git push 
 
+push-makefile:
+	git add Makefile  
+	git commit 
+	git push 
+
+
 push-all:
 	git add *
 	git commit 
@@ -40,7 +46,6 @@ push-all-force:
 
 push-docs:
 	git add README.md 
-	git add /docgen 
-	git add DOCS.md
+	git add /docs 
 	git commit 
 	git push 

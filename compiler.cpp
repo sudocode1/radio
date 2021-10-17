@@ -92,6 +92,9 @@ int main() {
         else if (line.rfind("@double", 0) == 0) {
             writeFile << "double " << line.substr(8) << ";\n"; 
         }
+        else if (line.rfind("@redefine", 0) == 0) {
+            writeFile << sep[1] << " = " << line.substr(sep[0].size() + 1 + sep[1].size() + 3) << ";\n"; 
+        }
         else if (line.rfind("end", 0) == 0) {
             writeFile << "}\n";
         }
