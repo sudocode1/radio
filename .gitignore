@@ -2,3 +2,4 @@
 output.c
 test.c
 *.radio
+test.*
