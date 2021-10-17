@@ -1,8 +1,7 @@
-# compile the compiler
+# compilers
 compiler: compiler.cpp
 	g++ -o compiler.out compiler.cpp -I.
 
-# compile the compiled radio file
 compile: output.c
 	gcc output.c -I.
 
@@ -16,6 +15,12 @@ fullcompile: compiler.cpp output.c
 	### RUN COMPILED RADIO FILE ###
 	./a.out 
 
+# docs
+docs:
+	node docs/docgen
+	### Completed
+
+# git
 push-base:
 	git add compiler.cpp 
 	git add Makefile 
