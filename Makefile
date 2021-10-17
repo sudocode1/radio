@@ -38,7 +38,6 @@ push-makefile:
 	git commit 
 	git push 
 
-
 push-all:
 	git add *
 	git commit 
