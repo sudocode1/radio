@@ -21,7 +21,7 @@ int main() {
 
     file.close();
 
-    std::ofstream writeFile("output.c"); // this one has AIDS (limited edition!!) :3
+    std::ofstream writeFile("output.c");
 
     writeFile << "#include <stdio.h>\n";
     writeFile << "#include <string.h>\n";
