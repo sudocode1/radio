@@ -50,7 +50,12 @@ push-all-force:
 	git push 
 
 push-docs:
-	git add README.md 
-	git add /docs 
+	git add ./docs 
+	git add DOCS.md 
+	git commit 
+	git push 
+
+push-docgen: 
+	git add ./docs
 	git commit 
 	git push 
