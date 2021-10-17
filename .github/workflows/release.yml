@@ -2,7 +2,7 @@ on:
   push:
     # Sequence of patterns matched against refs/tags
     tags:
-    - 'v*'
+      - master
 
 name: Create Release
 
@@ -11,6 +11,9 @@ jobs:
     name: Create Release
     runs-on: ubuntu-latest
     steps:
+      - name: Get current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y.%m.%d')"
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release
@@ -19,8 +22,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # This token is provided by Actions, you do not need to create your own token
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+          tag_name: ${{ steps.date.outputs.date }}
+          release_name: Release ${{ steps.date.outputs.date }}
           body: ${{ github.event.commits[0].message }}
           draft: false
           prerelease: false
