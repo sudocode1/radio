@@ -4,7 +4,20 @@
 #include <vector>
 #include <cstring>
 #include <typeinfo>
+#include <sstream>
 
+//credit: https://sourcecodeera.com/blogs/Samath/Splitting-a-string-into-a-vector-using-C.aspx
+std::vector<std::string> split(std::string str, char delimiter) {
+  std::vector<std::string> result;
+  std::stringstream ss(str); // Turn the string into a stream.
+  std::string tok;
+  
+  while(std::getline(ss,tok,delimiter)) {
+    result.push_back(tok);
+  }
+  
+  return result;
+}
 
 int main() {
     std::string input;
@@ -29,9 +42,7 @@ int main() {
 
     int i=1;
     for (std::string line : lines) {
-        //std::cout << line << std::endl;
-
-        //std::cout << line;
+        std::vector<std::string> sep = split(line, ' ');
 
         if (line.rfind("out!", 0) == 0) {
             writeFile << "printf(" << line.substr(5) << ");\nprintf(\"\\n\");\n"; 
@@ -51,6 +62,24 @@ int main() {
         else if (line.rfind("@floatout", 0) == 0) {
             writeFile << "printf(\"%f\", " << line.substr(9) << ");\n"; 
         }
+        else if (line.rfind("@!define", 0) == 0) {
+            writeFile << sep[1] << " " << sep[2] << "() {\n";
+        }
+        else if (line.rfind("@define", 0) == 0) {
+            writeFile << sep[1] << " " << sep[2] << " (";
+        }
+        else if (line.rfind("@param", 0) == 0) {
+            writeFile << sep[1] << " " << sep[2] << ",";
+        }
+        else if (line.rfind("@finalparam", 0) == 0) {
+            writeFile << sep[1] << " " << sep[2] << "){\n";
+        }
+        else if (line.rfind("@call", 0) == 0) {
+            writeFile << sep[1] << "(" << line.substr(sep[0].size() + 1 + sep[1].size() + 1) << ");\n";
+        }
+        else if (line.rfind("@!call", 0) == 0) {
+            writeFile << sep[1] << "();\n";
+        }
         else if (line.rfind("@str", 0) == 0) {
             writeFile << "char* " << line.substr(5) << ";\n"; 
         } 
@@ -60,9 +89,6 @@ int main() {
         else if (line.rfind("@float", 0) == 0) {
             writeFile << "float " << line.substr(7) << ";\n"; 
         }
-        // else if (line.rfind("@array", 0) == 0) {
-
-        // }
         else if (line.rfind("@double", 0) == 0) {
             writeFile << "double " << line.substr(8) << ";\n"; 
         }
