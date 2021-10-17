@@ -11,11 +11,8 @@ int main() {
     std::cout << "enter radio filename: ";
     std::getline(std::cin, input);
     std::cout << input << std::endl;
-
     std::vector <std::string> lines;{};
-
     std::string currentLine;
-
     std::ifstream file(input);
 
     while (std::getline (file, currentLine)) {
