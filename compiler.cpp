@@ -125,7 +125,6 @@ int main() {
         }
 
         i++;
-
     }
     writeFile << "return 0;\n}";
     writeFile.close();
