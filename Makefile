@@ -37,3 +37,10 @@ push-all-force:
 	git add * -f 
 	git commit 
 	git push 
+
+push-docs:
+	git add README.md 
+	git add /docgen 
+	git add DOCS.md
+	git commit 
+	git push 
