@@ -1,7 +1,7 @@
 # Changelog
 ## Language
 ### Features
-None
+- Add structures
 ### Bugfixes
 None
 

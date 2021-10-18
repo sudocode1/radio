@@ -53,6 +53,9 @@ int main() {
         else if (line.rfind(";;", 0) == 0) {
             
         }
+        else if (line.rfind("@structure", 0) == 0) {
+            writeFile << "typedef struct {\n";
+        }
         else if (line.rfind("@strout", 0) == 0) {
             writeFile << "printf(\"%s\", " << line.substr(8) << ");\n"; 
         } 
@@ -119,6 +122,20 @@ int main() {
         else if (line.rfind("@nl", 0) == 0) {
             writeFile << "printf(\"\\n\");\n";
         }
+        else if (line.rfind("@property", 0) == 0) {
+            if (sep[1] == "str") {
+                writeFile << "char * " << sep[2] << ";\n";
+            } else if (sep[1] == "float") {
+                writeFile << "float *" << sep[2] << ";\n";
+            } else if (sep[1] == "double") {
+                writeFile << "double * " << sep[2] << ";\n";
+            } else if (sep[1] == "int") {
+                writeFile << "int " << sep[2] << ";\n";
+            }
+        }
+        else if (line.rfind("@endstructure", 0) == 0) {
+            writeFile << "} " << sep[1] << ";\n";
+        } 
         else {
             std::cout << "ERR: Line " << i << "\n" << line << "\n";
             break;
