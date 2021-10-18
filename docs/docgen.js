@@ -2,7 +2,7 @@ const cond = [['cond', 'The condition.']];
 const varDef = [['name', 'The variable\'s name.'], ' = ', ['value', 'The variable\'s value.']];
 
 const data = [
-    ['@end', 'Ends a statement.'],
+    ['end', 'Ends a statement.'],
     ['out', 'Outputs text without a newline.'],
     ['out!', 'Outputs text with a newline.'],
     ['@nl', 'Prints a newline.'],

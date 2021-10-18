@@ -1,6 +1,6 @@
-# @end
+# end
 - Ends a statement.
-- Usage: @end 
+- Usage: end 
 # out
 - Outputs text without a newline.
 - Usage: out 
