@@ -1,5 +1,5 @@
 # Changelog
-## Compiler
+## Language
 ### Features
 None
 ### Bugfixes
