@@ -25,16 +25,19 @@ push-base:
 	git add compiler.cpp 
 	git add Makefile 
 	git add README.md
+	git add CHANGELOG.md 
 	git commit 
 	git push 
 
 push-compiler:
-	git add compiler.cpp 
+	git add compiler.cpp
+	git add CHANGELOG.md 
 	git commit 
 	git push 
 
 push-makefile:
-	git add Makefile  
+	git add Makefile
+	git add CHANGELOG.md 
 	git commit 
 	git push 
 
@@ -51,10 +54,12 @@ push-all-force:
 push-docs:
 	git add ./docs 
 	git add DOCS.md 
+	git add CHANGELOG.md
 	git commit 
 	git push 
 
 push-docgen: 
 	git add ./docs
+	git add CHANGELOG.md 
 	git commit 
 	git push 

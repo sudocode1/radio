@@ -16,6 +16,7 @@ If you have Make/Makefile installed, you can use the pre-made Makefile scripts t
 You will need node.js v16 (may work on v15/v14). The docgen script was made by [1s3k3b](https://github.com/1s3k3b). You can edit it how you like and make pull requests to update or improve it. 
 
 ## Makefile scripts
+All push scripts also push CHANGELOG.md
 | Script | Results | Requirements
 |---|---|---|
 | `make compiler` | Compile the compiler | g++ or gcc |
