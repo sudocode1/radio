@@ -112,3 +112,27 @@
 - Parameters
   - name - The variable's name.
   - value - The variable's value.
+# @structure
+- Start a structure.
+- Usage: @structure 
+# @struct_access_property
+- Output a structure property.
+- Usage: @struct_access_property type variable.property
+- Parameters
+  - type - The property type.
+  - variable.property - The variable and the property you want to output.
+# @create_struct
+- Create a variable based on a structure.
+- Usage: @create_struct struct name
+- Parameters
+  - struct - The structure name.
+  - name - The variable name.
+# @endstructure
+- End a structure definition.
+- Usage: @endstructure 
+# @property
+- Add a structure property (within structure definition).
+- Usage: @property type name
+- Parameters
+  - type - The property type.
+  - name - The property name.

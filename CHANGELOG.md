@@ -9,7 +9,7 @@ None
 
 ## Docs
 ### Additions
-None
+- Add all structure-related things
 ### Doc Fixes
 - Fix end
 ### Docgen updates

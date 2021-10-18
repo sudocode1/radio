@@ -29,6 +29,11 @@ const data = [
     ['if', 'Adds an if statement.', cond, ['else if', 'elif', 'else'].map(x => [x, `Adds an ${x === 'elif' ? 'else if' : x} statement.`, cond])],
     ['while', 'Adds a while statement.', cond],
     ['@redefine', 'Redefines an already existing variable.', varDef],
+    ['@structure', 'Start a structure.'],
+    ['@struct_access_property', 'Output a structure property.', [['type', 'The property type.'], ['variable.property', 'The variable and the property you want to output.']]],
+    ['@create_struct', 'Create a variable based on a structure.', [['struct', 'The structure name.'], ['name', 'The variable name.']]],
+    ['@endstructure', 'End a structure definition.'],
+    ['@property', 'Add a structure property (within structure definition).', [['type', 'The property type.'], ['name', 'The property name.']]]
 ];
 // invalid ratio detected
 const render = (a, indent) => a.map(x => `${'#'.repeat(indent)} ${x[0]}
