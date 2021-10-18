@@ -2,6 +2,8 @@
 ## Language
 ### Features
 - Add structures
+- Added structure methods
+- Fixed @struct_access_property
 ### Bugfixes
 None
 
