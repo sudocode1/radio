@@ -17,3 +17,5 @@ None
 - Create CHANGELOG
 - Add CHANGELOG to Makefile git commands
 - Fix CHANGELOG
+- Change Compiler to Language
+- Fix CHANGELOG again
