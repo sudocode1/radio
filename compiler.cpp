@@ -27,6 +27,7 @@ int main() {
     std::vector <std::string> lines;{};
     std::string currentLine;
     std::ifstream file(input);
+    std::vector<std::string> structs{};
 
     while (std::getline (file, currentLine)) {
         lines.push_back(currentLine);
@@ -52,6 +53,20 @@ int main() {
         } 
         else if (line.rfind(";;", 0) == 0) {
             
+        }
+        else if (line.rfind("@structure", 0) == 0) {
+            writeFile << "typedef struct {\n";
+        }
+        else if (line.rfind("@struct_access_property", 0) == 0) {
+            std::string placeholder = "\%s";
+            
+            if (sep[1] == "str") {
+                placeholder = "\%s";
+            } else if (sep[1] == "int" || sep[1] == "float" || sep[1] == "double") {
+                placeholder = "\%d";
+            }
+
+            writeFile << "printf(\"" << placeholder << "\"," << sep[2] << ");\n";
         }
         else if (line.rfind("@strout", 0) == 0) {
             writeFile << "printf(\"%s\", " << line.substr(8) << ");\n"; 
@@ -93,7 +108,7 @@ int main() {
             writeFile << "double " << line.substr(8) << ";\n"; 
         }
         else if (line.rfind("@redefine", 0) == 0) {
-            writeFile << sep[1] << " = " << line.substr(sep[0].size() + 1 + sep[1].size() + 3) << ";\n"; 
+            writeFile << sep[1] << " = " << line.substr(sep[0].size() + sep[1].size() + 1) << ";\n"; 
         }
         else if (line.rfind("end", 0) == 0) {
             writeFile << "}\n";
@@ -119,6 +134,24 @@ int main() {
         else if (line.rfind("@nl", 0) == 0) {
             writeFile << "printf(\"\\n\");\n";
         }
+        else if (line.rfind("@property", 0) == 0) {
+            if (sep[1] == "str") {
+                writeFile << "char * " << sep[2] << ";\n";
+            } else if (sep[1] == "float") {
+                writeFile << "float *" << sep[2] << ";\n";
+            } else if (sep[1] == "double") {
+                writeFile << "double * " << sep[2] << ";\n";
+            } else if (sep[1] == "int") {
+                writeFile << "int " << sep[2] << ";\n";
+            }
+        }
+        else if (line.rfind("@create_struct", 0) == 0) {
+            writeFile << sep[1] << " " << sep[2] << ";\n";
+        }
+        else if (line.rfind("@endstructure", 0) == 0) {
+            writeFile << "} " << sep[1] << ";\n";
+            structs.push_back(sep[1]);
+        } 
         else {
             std::cout << "ERR: Line " << i << "\n" << line << "\n";
             break;

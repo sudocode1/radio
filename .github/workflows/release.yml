@@ -14,6 +14,11 @@ jobs:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y.%m.%d')"
+      - name: Read CHANGELOG.md
+        id: changelog
+        uses: juliangruber/read-file-action@v1
+        with:
+          path: ./CHANGELOG.md
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release
@@ -24,6 +29,6 @@ jobs:
         with:
           tag_name: ${{ steps.date.outputs.date }}
           release_name: Release ${{ steps.date.outputs.date }}
-          body: ${{ github.event.commits[0].message }}
+          body: ${{ steps.changelog.outputs.content }}
           draft: false
           prerelease: false
