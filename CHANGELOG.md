@@ -19,3 +19,4 @@ None
 - Fix CHANGELOG
 - Change Compiler to Language
 - Fix CHANGELOG again
+- Add `example.radio` to .gitignore
