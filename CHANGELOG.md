@@ -14,4 +14,5 @@ None
 None
 
 ### Misc
-None
+- Fix release changelog read (workflow)
+- Clear CHANGELOG
