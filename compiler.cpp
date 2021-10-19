@@ -52,7 +52,7 @@ int main() {
             writeFile << "printf(" << line.substr(4) << ");\n"; 
         } 
         else if (line.rfind(";;", 0) == 0) {
-            
+            writeFile << "//" << line.substr(2) << "\n";
         }
         else if (line.rfind("@structure", 0) == 0) {
             writeFile << "typedef struct {\n";

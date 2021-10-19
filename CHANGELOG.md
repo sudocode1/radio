@@ -1,7 +1,7 @@
 # Changelog
 ## Language
 ### Features
-None
+- Comments now paste over to output.c
 ### Bugfixes
 None
 
