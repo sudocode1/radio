@@ -2,7 +2,7 @@
 ## Language
 ### Features
 - Comments now paste over to output.c
-- Allow empty comments as a nice alternative to @nl
+- Allow empty comments
 - Add including other files
 ### Bugfixes
 None
