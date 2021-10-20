@@ -18,3 +18,4 @@ None
 ### Misc
 - Fix release changelog read (workflow)
 - Clear CHANGELOG
+- Remove example.radio
