@@ -19,6 +19,15 @@ std::vector<std::string> split(std::string str, char delimiter) {
   return result;
 }
 
+void readIncl(std::string fileName, std::vector<std::string> *lines) {
+    std::string curLine;
+    std::ifstream inclFile(fileName);
+    while (std::getline(inclFile, curLine)) {
+        (*lines).push_back(curLine);
+    }
+    inclFile.close();
+}
+
 int main() {
     std::string input;
     std::cout << "enter radio filename: ";
@@ -29,8 +38,15 @@ int main() {
     std::ifstream file(input);
     std::vector<std::string> structs{};
 
+
+
     while (std::getline (file, currentLine)) {
-        lines.push_back(currentLine);
+        if (currentLine.rfind("@incl", 0) == 0) {
+            readIncl(currentLine.substr(6), &lines);
+        } else {
+            lines.push_back(currentLine);
+        }
+        
     };
 
     file.close();
