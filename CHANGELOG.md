@@ -1,9 +1,7 @@
 # Changelog
 ## Language
 ### Features
-- Comments now paste over to output.c
-- Allow empty comments
-- Add including other files
+None
 ### Bugfixes
 None
 
@@ -16,7 +14,4 @@ None
 None
 
 ## Misc
-- Fix release changelog read (workflow)
 - Clear CHANGELOG
-- Remove example.radio
-- Fix CHANGELOG Misc title
