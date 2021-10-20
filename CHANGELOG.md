@@ -15,7 +15,8 @@ None
 ### Docgen updates
 None
 
-### Misc
+## Misc
 - Fix release changelog read (workflow)
 - Clear CHANGELOG
 - Remove example.radio
+- Fix CHANGELOG Misc title
