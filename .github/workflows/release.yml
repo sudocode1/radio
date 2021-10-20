@@ -14,11 +14,14 @@ jobs:
       - name: Get current date
         id: date
         run: echo "::set-output name=date::$(date +'%Y.%m.%d')"
+      - name: Clone repo
+        id: clone
+        run: git clone https://github.com/sudocode1/radio.git -b build
       - name: Read CHANGELOG.md
         id: changelog
         uses: juliangruber/read-file-action@v1
         with:
-          path: ./CHANGELOG.md
+          path: ./radio/CHANGELOG.md
       - name: Checkout code
         uses: actions/checkout@v2
       - name: Create Release
