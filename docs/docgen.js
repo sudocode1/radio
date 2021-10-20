@@ -33,7 +33,9 @@ const data = [
     ['@struct_access_property', 'Output a structure property.', [['type', 'The property type.'], ['variable.property', 'The variable and the property you want to output.']]],
     ['@create_struct', 'Create a variable based on a structure.', [['struct', 'The structure name.'], ['name', 'The variable name.']]],
     ['@endstructure', 'End a structure definition.'],
-    ['@property', 'Add a structure property (within structure definition).', [['type', 'The property type.'], ['name', 'The property name.']]]
+    ['@property', 'Add a structure property (within structure definition).', [['type', 'The property type.'], ['name', 'The property name.']]],
+    [';;', 'Add a comment.', [['comment', 'The comment content.']]],
+    ['@incl', 'Include all code from another file.', [['file', 'The file name.']]]
 ];
 // invalid ratio detected
 const render = (a, indent) => a.map(x => `${'#'.repeat(indent)} ${x[0]}

@@ -136,3 +136,13 @@
 - Parameters
   - type - The property type.
   - name - The property name.
+# ;;
+- Add a comment.
+- Usage: ;; comment
+- Parameters
+  - comment - The comment content.
+# @incl
+- Include all code from another file.
+- Usage: @incl file
+- Parameters
+  - file - The file name.
